@@ -56,8 +56,6 @@ Partial Class _Default
 
         'This section uses the for loop to display the loan balance and interest paid over the term of the loan.
         Dim counterStart As Integer
-
-
         For counterStart = 1 To loanTerm
 
 
@@ -70,7 +68,7 @@ Partial Class _Default
             'Writes the data to a new row in the gridview.
             tRow = loanAmortTbl.NewRow()
             tRow("Payment Number") = String.Format(counterStart)
-            tRow("Payment Date") = String.Format(counterStart)
+            tRow("Payment Date") = Date.Now
             tRow("Principal Paid") = String.Format("{0:C}", principal) ' String.Format("{0:C},principal) formats the variable "prinicpal" as currency (C).
             tRow("Interest Paid") = String.Format("{0:C}", interestPaid)
             tRow("New Balance") = String.Format("{0:C}", nBalance)
@@ -90,6 +88,10 @@ Partial Class _Default
         tbLoanAmt.Text = ""
         tbLoanTerm.Text = ""
         tbAnnualInterest.Text = ""
+
+    End Sub
+
+    Protected Sub loanGridView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles loanGridView.SelectedIndexChanged
 
     End Sub
 End Class

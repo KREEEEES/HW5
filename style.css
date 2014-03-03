@@ -1,0 +1,12 @@
+﻿body {background: grey;
+      text-align: center;
+      color: limegreen;
+}
+.loanGridView {
+    text-align: center; font:red;
+}
+h1 {
+    font: bold;
+    font: italic;
+    color: white;
+}
